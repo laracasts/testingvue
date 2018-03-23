@@ -7,7 +7,7 @@
             <li v-for="(reminder, index) in reminders" :key="reminder">
                 {{ reminder }}
 
-                <button class="remove" @click="remove(reminder, index)">Remove</button>
+                <button class="remove" @click="remove(index)">Remove</button>
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@
                 this.newReminder = '';
             },
 
-            remove (reminder, index) {
+            remove (index) {
                 this.reminders.splice(index, 1);
             }
         }
